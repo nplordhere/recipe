@@ -117,18 +117,24 @@ nav {
 nav img {
     width: 10%;
 }
-nav ul li:not(:first-child) {
+nav ul li + li {
     overflow: hidden;
     display: flex;
     max-height: 0;
     background-color: #ffffff;
 }
-#home {
+nav ul li {
     background-color: #EB5428;
     margin: 0 auto;
     height: 100%;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
     width: 90%;
+}
+nav ul li:hover {
+    background-color: #000000;
+}
+nav ul li + li:hover {
+    background-color: #000000;
 }
 [href="#avatar"] {
     display: flex;
@@ -145,6 +151,9 @@ nav ul li:not(:first-child) {
     scale: 140%;
     padding-top: 5px;
 }
+[href="#avatar"] span:hover {
+    background-color: rgba(235, 84, 40, .3);
+}
 .title {
     display: none;
 }
@@ -154,7 +163,7 @@ nav ul li:not(:first-child) {
     visibility: hidden;
     position: absolute;
 }
-#dropdown:checked + nav ul li:not(:first-child) {
+#dropdown:checked ~ nav ul li:not(:first-child) {
     overflow: visible;
     height: 1000px;
 }
@@ -180,12 +189,19 @@ label span {
     border-style: none;
     background-color: #EB5428;
     position: absolute;
+    cursor: pointer;
+}
+#search button:hover > svg {
+    stroke: #000000;
 }
 #rsearch {
     line-height: 39px;
     border-style: solid;
     border-color: #EB5428;
     width: 250px;
+}
+#rsearch:focus {
+    border-color: #000000;
 }
 
 /* Header */
@@ -204,7 +220,10 @@ header h1 {
     text-align: center;
     margin-top: 25px;
 }
-
+header menu li span:hover {
+    background-color: rgba(235, 84, 40, .8);
+    color: #ffffff;
+}
 
 /* article */
 article img {
@@ -238,6 +257,11 @@ aside h2 {
     display: grid;
     grid-template-columns: 25% 75%;
     grid-template-rows: 20% 20% 20%;
+}
+.sides:hover {
+    padding: 10px;
+    background-color: rgba(235, 84, 40, .3);
+    cursor: pointer;
 }
 .sides img {
     grid-column: 1 ;
@@ -282,6 +306,11 @@ footer span {
     width: 414px;
     text-align: center;
 }
+#socials li svg:hover {
+    scale: 120%;
+    transition: .2s;
+}
+
 #foot {
     padding-top: 20px;
     text-align: center;
@@ -351,6 +380,10 @@ footer span {
     }
     nav span {
         color: #EB5428;
+    }
+    nav ul li span:hover {
+        background-color: #EB5428;
+        color: #ffffff;
     }
     [href="#avatar"] {
         position: relative;
